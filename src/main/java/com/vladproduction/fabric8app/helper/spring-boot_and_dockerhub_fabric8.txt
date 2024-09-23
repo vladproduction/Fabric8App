@@ -1,0 +1,27 @@
+# Spring Boot and Docker
+**This repository contain project for fabric8 plugin**
+### description:
+    * Spring Boot app;
+    * Dockerfile;
+    * DockerHub;
+    * plugin io.fabric8;
+    * image will be created through maven;
+    * image will be pushed to DockerHub;
+
+### steps to  run [Fabric8App]:[http://localhost:8089/api/products] :
+1. local app: 
+    * -->start application
+    * -->follow link
+
+2. local docker image: 
+   * -->open bash in a root of project
+   * -->mvn clean package docker:build
+   * -->docker image ls
+   * -->docker run -p 8089:8080 --name fabric8 -d <image_name_or_hash>
+   * -->follow link
+
+3. pushing to dockerhub remote (and pull for wanted to run):
+   * -->open bash in a root of project
+   * -->mvn clean package docker:build docker:push (assume credentials for dockerhub is covered)
+   * -->docker pull vladbogdadocker/springbootdockerfabric:latest
+   * -->docker run -p 8089:8080 --name fab8 -d vladbogdadocker/springbootdockerfabric:latest
