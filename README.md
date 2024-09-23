@@ -31,10 +31,12 @@
    * --> todo (how to implement compose up)
    * --> link to swagger (to imitate working app using OpenAPI - Swagger)
 
+/0/how to implement compose up (for user to act)
 
-//on which step we pushing app to github?
-//and how to use jenkins tools in flow? (assume we want to have the latest image with completed/workable app for pulling from remote)
-//also wanted to implement h2-in-memory or mysql for testing app separately from main database 
-//update partially(through mapstruct (does not work partially))
+/1/also wanted to implement h2-in-memory or mysql for testing app separately from main database
+
+/2/and how to use jenkins tools in flow? (assume we want to have the latest image with completed/workable app for pulling from remote)
+
+
 
 
