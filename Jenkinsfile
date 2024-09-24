@@ -1,18 +1,21 @@
 pipeline {
     agent any
     stages {
-        stage('Stage#1: Checkout') {
+        stage('Stage#1: Maven version') {
             steps {
                 script {
-                    checkout([
-                        $class: 'GitSCM',
-                        branches: [[name: '*/main']],
-                        userRemoteConfigs: [[url: 'https://github.com/vladproduction/Fabric8App']]
-                    ])
+                    bat "./mvnw --version"
                 }
             }
         }
-        stage('Stage#2: Build Docker Image') {
+        stage('Stage#2: Capture') {
+            steps {
+                archiveArtifacts '**/target/*.jar'
+                jacoco()
+                junit '**/target/surefire-reports/TEST*.xml'
+            }
+        }
+        stage('Stage#3: Build Docker Image') {
             steps {
                 script {
                     // Building Docker image using Fabric8 with Maven
@@ -20,7 +23,7 @@ pipeline {
                 }
             }
         }
-        stage('Stage#3: Push Docker Image to Docker Hub') {
+        stage('Stage#4: Push Docker Image to Docker Hub') {
             steps {
                 script {
                     // Pushing Docker image to Docker Hub using Fabric8 with Maven
