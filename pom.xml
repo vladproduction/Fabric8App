@@ -142,8 +142,8 @@
 									<descriptorRef>artifact</descriptorRef>
 								</assembly>
 								<tags>
-									<tag>latest</tag>
 									<tag>${docker.tag}</tag>
+									<tag>latest</tag>
 								</tags>
 							</build>
 						</image>
