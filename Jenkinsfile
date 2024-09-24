@@ -38,22 +38,21 @@ pipeline {
                                 steps {
                                      script {
                                           // build based on Dockerfile with using io.fabric
-                                          bat './mvnw.cmd clean package docker:build'
+                                          bat './mvnw.cmd clean package -t docker:build:%BUILD_NUMBER% ./src/docker'
 //                                           bat './mvnw.cmd clean package docker:build docker:push'
-//                                           bat 'docker build -t vladbogdadocker/phrases:%BUILD_NUMBER% .'
+//                                           bat 'docker build -t vladbogdadocker/phrases:%BUILD_NUMBER% ./src/docker'
                                      }
                                 }
                             }
 
-        /* stage('Stage#7: Push Docker Image to Docker Hub') {
+     stage('Stage#6: Push Docker Image to Docker Hub') {
              steps {
                   script {
-
                        // Push the latest image
-                       bat 'docker push vladbogdadocker/phrases:%BUILD_NUMBER%'
+                       bat './mvnw.cmd docker:push:%BUILD_NUMBER%'
                   }
              }
-        } */
+     }
 
         /* stage('Stage#8: Push Image to Docker Hub as latest') {
              steps {
