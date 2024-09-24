@@ -25,6 +25,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<docker.image.prefix>vladbogdadocker</docker.image.prefix>
 		<docker.image.name>fabric8app</docker.image.name>
+		<docker.tag>1</docker.tag>
 	</properties>
 
 	<dependencies>
