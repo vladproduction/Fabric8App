@@ -12,7 +12,10 @@ This repository contain project:
 * Jenkins (job based on Jenkinsfile: pipeline project)
 * Dockerhub has a repository with pushed versions of app from Jenkins;
 
-### steps to  run [Fabric8App]:[http://localhost:8089/api/products] :
+### steps to  run :
+### [Fabric8App]:[http://localhost:8089/api/products]
+### [swagger]:[http://localhost:8089/swagger-ui/index.html#/]
+### [actuator]:[http://localhost:8089/actuator/info]
 1. local app: 
     * -->start application
     * -->follow link (postman in action... crud endpoints by controller)
