@@ -1,12 +1,16 @@
-# Spring Boot and Docker
-**This repository contain project for fabric8 plugin**
-### description:
-    * Spring Boot app;
-    * Dockerfile;
-    * DockerHub;
-    * plugin io.fabric8;
-    * image will be created through maven;
-    * image will be pushed to DockerHub;
+# Fabric8App (Spring Boot project)
+This repository contain project:
+- associated to Docker and Jenkins;
+- include fabric8 plugin (image will be created through maven);
+- flow: app -> GitHub -> Jenkins -> Dockerhub;
+
+
+### context of app:
+* java project were created;
+* pushed to GitHub (and by updates also);
+* build triggers (through Poll SCM Schedule)
+* Jenkins (job based on Jenkinsfile: pipeline project)
+* Dockerhub has a repository with pushed versions of app from Jenkins;
 
 ### steps to  run [Fabric8App]:[http://localhost:8089/api/products] :
 1. local app: 
