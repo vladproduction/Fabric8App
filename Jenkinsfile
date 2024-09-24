@@ -9,12 +9,12 @@ pipeline {
             }
         }
         stage('Stage#2: clean package') {
-                    steps {
-                        script {
-                            bat './mvnw.cmd clean package'
-                        }
-                    }
+            steps {
+                script {
+                    bat './mvnw.cmd clean package'
                 }
+            }
+        }
         stage('Stage#3: Capture') {
             steps {
                 archiveArtifacts '**/target/*.jar'
@@ -40,4 +40,3 @@ pipeline {
         }
     }
 }
-
